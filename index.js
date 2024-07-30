@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 6000;
 
 const corsOptions = {
-  origin: "https://todo-app-frontend-five-woad.vercel.app"
+  origin: "https://todo-app-vercel-akki.vercel.app"
 };
 
 app.use(cors(corsOptions));
