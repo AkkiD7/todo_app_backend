@@ -9,7 +9,13 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 6000;
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://todo-app-frontend-five-woad.vercel.app",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 mongoose
   .connect(process.env.MONGO_URI)
