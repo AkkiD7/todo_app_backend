@@ -8,13 +8,13 @@ require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 6000;
-
-const corsOptions = {
-  origin: "https://todo-app-vercel-akki.vercel.app"
-};
-
-app.use(cors(corsOptions));
 app.use(bodyParser.json());
+const corsOptions = {
+  origin: "https://todo-app-vercel-akki.vercel.app",
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
