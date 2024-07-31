@@ -28,6 +28,10 @@
       "dest": "/index.js"
     },
     {
+      "src": "/api-docs",
+      "dest": "/index.js"
+    },
+    {
       "handle": "filesystem"
     },
     {
