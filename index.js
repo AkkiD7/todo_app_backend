@@ -11,8 +11,7 @@ const PORT = process.env.PORT || 6000;
 app.use(bodyParser.json());
 const corsOptions = {
   origin: [
-    "https://todo-app-vercel-akki.vercel.app",
-    "https://todo-app-frontend-t.netlify.app"
+    "https://todo-app-vercel-akki.vercel.app"
   ],
 };
 app.use(cors(corsOptions));
