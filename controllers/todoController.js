@@ -114,6 +114,12 @@ exports.filterTodos = async (req, res) => {
         .status(400)
         .json({ message: "Status query parameter is required" });
     }
+    if (typeof status !== 'string') {
+      return res
+        .status(400)
+        .json({ message: "Invalid status query parameter" });
+    }
+
     const todos = await TodoItem.find({ status }); 
     res.status(200).json(todos);
   } catch (error) {
@@ -121,3 +127,4 @@ exports.filterTodos = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
