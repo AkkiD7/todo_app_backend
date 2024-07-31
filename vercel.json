@@ -8,8 +8,24 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "index.js"
+      "src": "/todos",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/todos/(.*)",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/filter",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/upload",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/download",
+      "dest": "/index.js"
     },
     {
       "handle": "filesystem"
@@ -17,7 +33,7 @@
     {
       "src": "/(.*)",
       "status": 404,
-      "dest": "index.js"
+      "dest": "/index.js"
     }
   ]
 }
