@@ -106,18 +106,18 @@ exports.downloadTodos = async (req, res) => {
 };
 
 exports.filterTodos = async (req, res) => {
-  const { status } = req.query;
-  console.log('Filtering todos by status:', status); // Debugging line
+  const { status } = req.query; 
+  console.log('Filtering todos by status:', status); 
   try {
     if (!status) {
       return res
         .status(400)
         .json({ message: "Status query parameter is required" });
     }
-    const todos = await TodoItem.find({ status });
+    const todos = await TodoItem.find({ status }); 
     res.status(200).json(todos);
   } catch (error) {
-    console.error('Filter Todos Error:', error); // Debugging line
+    console.error('Filter Todos Error:', error); 
     res.status(500).json({ message: error.message });
   }
 };
