@@ -107,6 +107,7 @@ exports.downloadTodos = async (req, res) => {
 
 exports.filterTodos = async (req, res) => {
   const { status } = req.query;
+  console.log('Filtering todos by status:', status); // Debugging line
   try {
     if (!status) {
       return res
@@ -116,6 +117,7 @@ exports.filterTodos = async (req, res) => {
     const todos = await TodoItem.find({ status });
     res.status(200).json(todos);
   } catch (error) {
+    console.error('Filter Todos Error:', error); // Debugging line
     res.status(500).json({ message: error.message });
   }
 };
