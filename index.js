@@ -25,7 +25,7 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Welcome To The Todo Application");
 });
-app.use("/api/todos", todoRoutes);
+app.use("/todos", todoRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(PORT, () => {
